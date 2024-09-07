@@ -15,6 +15,7 @@ services:
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./ssl:/etc/ssl/vocab.rlx:ro
     healthcheck:
       test: [ "CMD-SHELL", "wget -O /dev/null http://127.0.0.1/health || exit 1" ]
       timeout: 10s
